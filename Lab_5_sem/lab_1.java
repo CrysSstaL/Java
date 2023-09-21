@@ -3,11 +3,11 @@ import static java.lang.Integer.MAX_VALUE;
 
 public class lab_1 {
     public static void main(String[] args) {
-        point_1();
-        point_2();
-        point_3();
-        point_4();
-        point_5();
+//        point_1();
+//        point_2();
+//        point_3();
+//        point_4();
+//        point_5();
     }
     public static void point_1() // #1 Сиракузская последовательность
     {
@@ -121,11 +121,11 @@ public class lab_1 {
         int tunnel_number;
         int local_tunnel;
         int local_road = 0;
-        int min = MAX_VALUE;
         int result = 0;
         int[] tunnel_min = new int[road_number];
         for (int i = 0; i < road_number; i++)  // перебор дорог
         {
+            int min = MAX_VALUE;
             tunnel_number = scanner.nextInt();
             for (int j = 0; j < tunnel_number; j++)  // перебор тунелей
             {
