@@ -144,11 +144,9 @@ public class lab_3 {
     {
         System.out.println("Выберите кинотеатр : ");
         Utils.printKinoteatrs(kinoteatrs);
-        Scanner scanner_second = new Scanner(System.in);
         int step_2 = Utils.correctInputInt();
         Kinoteatr kinoteatr = kinoteatrs[step_2-1];
         kinoteatr.setCabinets(Utils.upLengthC(kinoteatr.getCabinets()));
-        Utils.printCabinets(kinoteatr);
         System.out.println("В Кинотеатре " + kinoteatr.getName() + " добавлен новый кинозал!");
         System.out.println("-----------------");
         return kinoteatrs;
@@ -237,14 +235,14 @@ public class lab_3 {
             System.out.println("Отлично!");
             System.out.println("Выберите ряд!");
             id_row = Utils.correctInputInt();
-            if ((id_row > sessions[id_session].getCabinet().getRow() - 1 || id_row - 1 < 0) && flag) {
+            if ((id_row > sessions[id_session].getCabinet().getRow() || id_row - 1 < 0) && flag) {
                 flag = false;
                 System.out.println("Выбранного ряда не существует");
             }
             else {
                 System.out.println("Выберите место!");
                 id_place = Utils.correctInputInt();
-                if ((id_place > sessions[id_session].getCabinet().getPlace_in_row() - 1 || id_place - 1 < 0) && flag) {
+                if ((id_place > sessions[id_session].getCabinet().getPlace_in_row() || id_place - 1 < 0) && flag) {
                     flag = false;
                     System.out.println("Выбранного места не существует");
                 }

@@ -26,12 +26,17 @@ public class Cabinet {
         return this.place_in_row;
     }
 
-    public void setSeat(int row, int place)
+    public boolean setSeat(int row, int place)
     {
-        if (row < 0) {
-            if (!this.seats[row][place])
-                this.seats[row][place] = true;
-            else System.out.println("Место уже занято!");
+        if (!this.seats[row][place])
+        {
+            this.seats[row][place] = true;
+            return true;
+        }
+        else
+        {
+            System.out.println("Место уже занято!");
+            return false;
         }
     }
     public void printSeats()
