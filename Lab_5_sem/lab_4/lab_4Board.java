@@ -92,7 +92,8 @@ public class lab_4Board {
             System.out.println("move");
             this.location[row2][col2] = figure;
             this.location[coord_y][coord_x] = null;
-            return;
+            figure.setRow(coord_y);
+            figure.setCol(coord_x);
         }
     }
     private void moveOtherFigure(int row2, int col2, Figure figure) throws Error {
